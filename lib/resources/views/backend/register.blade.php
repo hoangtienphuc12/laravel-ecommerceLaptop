@@ -83,7 +83,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 							<div class="form-group">
 								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" value ="{{old('email')}}">
 							</div>
-							<div class="form-group">
+							<div class="form-group"> 
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
 							<div class="form-group">
