@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use DB;
 use Illuminate\Support\Str;
-use App\Http\Requests\AddProductRequest;
+// use App\Http\Requests\AddProductRequest;
 use App\Models\Category;
 
-class ProductController extends Controller
+class ProductController1112321312312321 extends Controller
 {
     //
     public function getProduct(){
@@ -21,30 +21,31 @@ class ProductController extends Controller
         $data['catelist'] = Category::all();
         return view('backend.addproduct',$data);
     }
-    public function postAddProduct(AddProductRequest $request){
-        $filename = $request->img->getClientOriginalName();
-        $product= new Product;
-        $product->prod_name = $request->name;
-        $product->prod_slug = Str::slug($request->name);
-        $product->prod_img = $filename;
-        $product->prod_accessories = $request->accessories;
-        $product->prod_price = $request->price;
-        $product->prod_warranty = $request->warranty;
-        $product->prod_promotion = $request->promotion;
-        $product->prod_condition = $request->condition;
-        $product->prod_status = $request->status;
-        $product->prod_description = $request->description;
-        $product->prod_cate = $request->cate;
-        $product->prod_featured = $request->featured;
-        $product->save();
-        $request->img->storeAs('avatar',$filename);
-        return back();
-
-    }
-    public function getEditProduct($id){
-        $data['product'] = Product::find($id);
-        $data['listcate'] = Category::all();
-        return view('backend.editproduct',$data);
+    // public function postAddProduct(AddProductRequest $request){
+    //     $filename = $request->img->getClientOriginalName();
+    //     $product= new Product;
+    //     $product->prod_name = $request->name;
+    //     $product->prod_slug = Str::slug($request->name);
+    //     $product->prod_img = $filename;
+    //     $product->prod_accessories = $request->accessories;
+    //     $product->prod_price = $request->price;
+    //     $product->prod_warranty = $request->warranty;
+    //     $product->prod_promotion = $request->promotion;
+    //     $product->prod_condition = $request->condition;
+    //     $product->prod_status = $request->status;
+    //     $product->prod_description = $request->description;
+    //     $product->prod_cate = $request->cate;
+    //     $product->prod_featured = $request->featured;
+    //     $product->save();
+    //     $request->img->storeAs('avatar',$filename);
+    //     return back();
+    // }
+    public function getEditProduct(){
+        dd($request);
+        // var_dump($id);
+        // $data['product'] = Product::find($id);
+        // $data['listcate'] = Category::all();
+        // return view('backend.editproduct',$data);
     }
     public function postEditProduct(Request $request,$id){
         $product= new Product;

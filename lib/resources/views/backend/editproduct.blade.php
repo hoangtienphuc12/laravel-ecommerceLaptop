@@ -47,6 +47,10 @@
 										<input required type="text" name="condition" class="form-control" value="{{$product->prod_condition}}">
 									</div>
 									<div class="form-group" >
+										<label>Giảm giá</label>
+										<input required type="text" name="sales" class="form-control"  value="2000">
+									</div>
+									<div class="form-group" >
 										<label>Trạng thái</label>
 										<select required name="status" class="form-control">
 											<option value="1" @if($product->prod_status==1) checked  @endif>Còn hàng</option>

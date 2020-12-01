@@ -11,6 +11,9 @@
 |
 */
 Route::get('/','FrontendController@getHome');
+Route::get('/specials','FrontendController@getSpecials');
+Route::get('sort/{id}','FrontendController@getSort');
+Route::get('news','FrontendController@getNewProduct');
 
 Route::get('/details/{id}/{slug}','FrontendController@getDetails');
 
